@@ -12,7 +12,13 @@ class TranslationViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    let translateNavButton = UIBarButtonItem(title: "Translate", style: .plain, target: self, action: #selector(translateNavButtonTapped(button:)))
+    
+    navigationItem.rightBarButtonItem = translateNavButton
+  }
+  
+  func translateNavButtonTapped(button: UIBarButtonItem) {
+    print("Tapped")
   }
 
   override func didReceiveMemoryWarning() {
