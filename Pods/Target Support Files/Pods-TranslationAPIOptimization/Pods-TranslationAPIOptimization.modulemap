@@ -1,0 +1,6 @@
+framework module Pods_TranslationAPIOptimization {
+  umbrella header "Pods-TranslationAPIOptimization-umbrella.h"
+
+  export *
+  module * { export * }
+}
