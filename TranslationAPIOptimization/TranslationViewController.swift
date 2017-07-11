@@ -18,6 +18,8 @@ class TranslationViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.automaticallyAdjustsScrollViewInsets = false
+    
     let translateNavButton = UIBarButtonItem(title: "Translate", style: .plain, target: self, action: #selector(translateNavButtonTapped(button:)))
     
     self.view.addLayoutGuide(middleLayoutGuide)
