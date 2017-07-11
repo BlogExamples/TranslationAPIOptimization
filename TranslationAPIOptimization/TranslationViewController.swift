@@ -15,6 +15,9 @@ class TranslationViewController: UIViewController {
     let translateNavButton = UIBarButtonItem(title: "Translate", style: .plain, target: self, action: #selector(translateNavButtonTapped(button:)))
     
     navigationItem.rightBarButtonItem = translateNavButton
+    Search.requestTranslation(source: "en", target: "de", textToTranslate: "Hello") { (isSuccessful, result) in
+      print("done")
+    }
   }
   
   func translateNavButtonTapped(button: UIBarButtonItem) {
