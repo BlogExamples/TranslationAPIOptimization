@@ -18,7 +18,9 @@ class TranslationViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     self.automaticallyAdjustsScrollViewInsets = false
+    self.toTranslateTV.isUserInteractionEnabled = false
     
     let translateNavButton = UIBarButtonItem(title: "Translate", style: .plain, target: self, action: #selector(translateNavButtonTapped(button:)))
     navigationItem.rightBarButtonItem = translateNavButton
@@ -60,13 +62,17 @@ class TranslationViewController: UIViewController {
   }
   
   func translateNavButtonTapped(button: UIBarButtonItem) {
-    Search.requestTranslation(source: "en", target: "de", textToTranslate: fromTranslateTV.text) { (isSuccessful, result) in
+    var textToTranslate = fromTranslateTV.text
+    
+    
+    Search.requestTranslation(source: "en", target: "de", textToTranslate: textToTranslate!) { (isSuccessful, result) in
       if isSuccessful {
         self.toTranslateTV.text = result
       } else {
         
       }
     }
+    fromTranslateTV.resignFirstResponder()
   }
 
   override func didReceiveMemoryWarning() {

@@ -15,6 +15,7 @@
 		B04B0E5D1F142E8000CABB94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B04B0E5B1F142E8000CABB94 /* LaunchScreen.storyboard */; };
 		B04B0E651F1433A100CABB94 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B0E641F1433A100CABB94 /* Secrets.swift */; };
 		B04B0E671F1442FE00CABB94 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B0E661F1442FE00CABB94 /* Search.swift */; };
+		B0A087FC1F157CAA0031EC7F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A087FB1F157CAA0031EC7F /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B04B0E5E1F142E8000CABB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B04B0E641F1433A100CABB94 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		B04B0E661F1442FE00CABB94 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		B0A087FB1F157CAA0031EC7F /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				B04B0E521F142E8000CABB94 /* AppDelegate.swift */,
 				B04B0E541F142E8000CABB94 /* TranslationViewController.swift */,
+				B0A087FB1F157CAA0031EC7F /* String+Extensions.swift */,
 				B04B0E641F1433A100CABB94 /* Secrets.swift */,
 				B04B0E661F1442FE00CABB94 /* Search.swift */,
 				B04B0E561F142E8000CABB94 /* Main.storyboard */,
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0A087FC1F157CAA0031EC7F /* String+Extensions.swift in Sources */,
 				B04B0E551F142E8000CABB94 /* TranslationViewController.swift in Sources */,
 				B04B0E671F1442FE00CABB94 /* Search.swift in Sources */,
 				B04B0E651F1433A100CABB94 /* Secrets.swift in Sources */,
