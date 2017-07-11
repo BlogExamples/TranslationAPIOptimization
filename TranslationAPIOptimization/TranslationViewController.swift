@@ -21,6 +21,7 @@ class TranslationViewController: UIViewController {
     self.automaticallyAdjustsScrollViewInsets = false
     
     let translateNavButton = UIBarButtonItem(title: "Translate", style: .plain, target: self, action: #selector(translateNavButtonTapped(button:)))
+    navigationItem.rightBarButtonItem = translateNavButton
     
     self.view.addLayoutGuide(middleLayoutGuide)
     
@@ -55,14 +56,17 @@ class TranslationViewController: UIViewController {
       toTranslateTV.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.topAnchor)
     ])
     
-    navigationItem.rightBarButtonItem = translateNavButton
-    Search.requestTranslation(source: "en", target: "de", textToTranslate: "Hello") { (isSuccessful, result) in
-      print("done")
-    }
+    
   }
   
   func translateNavButtonTapped(button: UIBarButtonItem) {
-    print("Tapped")
+    Search.requestTranslation(source: "en", target: "de", textToTranslate: fromTranslateTV.text) { (isSuccessful, result) in
+      if isSuccessful {
+        self.toTranslateTV.text = result
+      } else {
+        
+      }
+    }
   }
 
   override func didReceiveMemoryWarning() {

@@ -28,7 +28,6 @@ class Search {
       .validate()
       .responseJSON { (response) in
         if let json = response.result.value as? [String: Any] {
-          print(json)
           if let data = json["data"] as? [String: Any] {
             if let translations = data["translations"] as? [[String:Any]] {
               let translatedTextDict = translations[0]
