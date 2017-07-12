@@ -17,10 +17,10 @@ class Search {
     
     // Add URL parameters
     let urlParams = [
-      "target":target,
-      "q":"\(textToTranslate)",
-      "key":Secrets.apiTranslationKey,
-      "source":source,
+      "target": target,
+      "q": textToTranslate,
+      "key": Secrets.apiTranslationKey,
+      "source": source,
       ]
     
     // Fetch Request

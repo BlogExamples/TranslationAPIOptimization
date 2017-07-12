@@ -61,12 +61,14 @@ class TranslationViewController: UIViewController {
     
   }
   
+  // Called with the "Translate" button in the navbar is clicked
   func translateNavButtonTapped(button: UIBarButtonItem) {
     let text = fromTranslateTV.text
     
     guard let textToTranslate = text else { return }
     let trimmedTextToTranslate = textToTranslate.removeExtraWhiteSpaces()
 
+    // The code inside of this if will only run if the text isn't empty
     if !trimmedTextToTranslate.isEmpty {
       // The source and target are hardcoded but you can update these to other languages that Google supports
       Search.requestTranslation(source: "en", target: "de", textToTranslate: trimmedTextToTranslate) { (isSuccessful, result) in
@@ -76,6 +78,12 @@ class TranslationViewController: UIViewController {
           
         }
       }
+    } else {
+      let alertVC = UIAlertController(title: "Oops, Missing Text", message: "You'll need to add text before trying to translate.", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "OK", style: .cancel)
+      alertVC.addAction(okAction)
+      
+      present(alertVC, animated: true, completion: nil)
     }
     
     fromTranslateTV.resignFirstResponder()
