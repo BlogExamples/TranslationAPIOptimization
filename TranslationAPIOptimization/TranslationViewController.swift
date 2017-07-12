@@ -62,16 +62,22 @@ class TranslationViewController: UIViewController {
   }
   
   func translateNavButtonTapped(button: UIBarButtonItem) {
-    var textToTranslate = fromTranslateTV.text
+    let text = fromTranslateTV.text
     
-    
-    Search.requestTranslation(source: "en", target: "de", textToTranslate: textToTranslate!) { (isSuccessful, result) in
-      if isSuccessful {
-        self.toTranslateTV.text = result
-      } else {
-        
+    guard let textToTranslate = text else { return }
+    let trimmedTextToTranslate = textToTranslate.removeExtraWhiteSpaces()
+
+    if !trimmedTextToTranslate.isEmpty {
+      // The source and target are hardcoded but you can update these to other languages that Google supports
+      Search.requestTranslation(source: "en", target: "de", textToTranslate: trimmedTextToTranslate) { (isSuccessful, result) in
+        if isSuccessful {
+          self.toTranslateTV.text = result
+        } else {
+          
+        }
       }
     }
+    
     fromTranslateTV.resignFirstResponder()
   }
 
